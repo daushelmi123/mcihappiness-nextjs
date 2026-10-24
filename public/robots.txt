@@ -1,0 +1,13 @@
+# robots.txt for MCI Happiness
+User-agent: *
+Allow: /
+Allow: /products
+
+# Sitemaps
+Sitemap: https://mcihappiness.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Disallow admin or private pages (if any)
+# Disallow: /admin

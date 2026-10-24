@@ -1,0 +1,16 @@
+{
+  "name": "MCI Happiness — Fireworks Wholesale",
+  "short_name": "MCI Happiness",
+  "description": "MCI Happiness, Don Fireworks & ADN RedCracker — fireworks wholesale supply Malaysia.",
+  "start_url": "/en/portal?utm_source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0D1B3E",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,459 @@
+import Link from 'next/link'
+import Image from 'next/image'
+import products from '@/data/products.json'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'MCI Happiness - Pemborong Mercun ADN RedCracker & Don Juara Malaysia',
+  description: 'MCI Happiness, Don Juara & ADN RedCracker - Pemborong mercun terbesar Malaysia. Harga borong murah + bantuan permit PDRM. Pengedar berlesen seluruh Malaysia.',
+  keywords: 'mci happiness, don juara, adn redcracker, mercun borong, bunga api malaysia, permit pdrm, pemborong mercun'
+}
+
+export default function Home() {
+  const featuredProducts = products.filter(p => p.image).slice(0, 5)
+
+  return (
+    <main className="min-h-screen">
+      {/* Hero Section dengan Warehouse Background */}
+      <section className="relative min-h-[750px] md:min-h-[700px] bg-black pb-8 md:pb-40">
+        {/* Warehouse Background Image Placeholder */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSI4MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMmQyZDJkIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWExYTFhIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjE5MjAiIGhlaWdodD0iODAwIiBmaWxsPSJ1cmwoI2cpIi8+PGcgb3BhY2l0eT0iMC4zIj48cmVjdCB4PSIyMDAiIHk9IjEwMCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNGMDQ0MkUiLz48cmVjdCB4PSI0MDAiIHk9IjIwMCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNGMDQ0MkUiLz48cmVjdCB4PSI4MDAiIHk9IjE1MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNGMDQ0MkUiLz48cmVjdCB4PSIxMjAwIiB5PSIyNTAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTUwIiBmaWxsPSIjRjA0NDJFIi8+PC9nPjwvc3ZnPg==')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/80" />
+
+        {/* Header */}
+        <div className="relative z-20">
+          <header className="border-b border-white/10 bg-black/20 backdrop-blur-sm">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 py-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="text-white text-xl md:text-2xl font-bold tracking-tight">
+                    MCI <span className="text-[#F0442E]">HAPPINESS</span>
+                  </div>
+                  <div className="text-white/60 text-[10px] md:text-xs uppercase tracking-widest">Fireworks Supply Network</div>
+                </div>
+                <nav className="hidden md:flex gap-8 text-sm font-medium">
+                  <a href="#home" className="text-white hover:text-white/80">HOME</a>
+                  <a href="#products" className="text-white/70 hover:text-white">PRODUCTS</a>
+                  <a href="#factory" className="text-white/70 hover:text-white">FACTORY</a>
+                  <a href="#distribution" className="text-white/70 hover:text-white">DISTRIBUTION</a>
+                </nav>
+                <div className="flex gap-3">
+                  <a href="https://wa.me/60167338738" className="border border-white text-white hover:bg-white hover:text-black px-4 md:px-5 py-2 text-xs md:text-sm font-semibold transition">
+                    BECOME A DEALER
+                  </a>
+                  <a href="https://wa.me/60167338738" className="bg-[#F0442E] hover:bg-[#D63826] text-white px-4 md:px-5 py-2 text-xs md:text-sm font-semibold transition">
+                    CONTACT US
+                  </a>
+                </div>
+              </div>
+            </div>
+          </header>
+
+          {/* Hero Content */}
+          <div className="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-32 pb-40 md:pb-12">
+            <div className="max-w-2xl">
+              <h1 className="text-white text-3xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-4 md:mb-6">
+                MALAYSIA'S<br/>
+                FIREWORKS<br/>
+                SUPPLY NETWORK
+              </h1>
+              <p className="text-white/90 text-sm md:text-xl leading-relaxed mb-6 md:mb-8">
+                Manufacturer. Importer. Wholesale Supplier.<br/>
+                Supplying celebrations and businesses across Malaysia.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
+                <Link href="/products" className="bg-[#F0442E] hover:bg-[#D63826] text-white px-6 md:px-7 py-3 md:py-3.5 text-xs md:text-sm font-bold transition inline-flex items-center justify-center gap-2">
+                  EXPLORE PRODUCTS
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <a href="https://wa.me/60167338738" className="border-2 border-white hover:bg-white hover:text-black text-white px-6 md:px-7 py-3 md:py-3.5 text-xs md:text-sm font-bold transition text-center">
+                  BECOME A DEALER
+                </a>
+              </div>
+              <div className="flex items-center gap-4 text-xs font-bold tracking-widest text-white/70">
+                <span>LICENSED</span>
+                <span className="text-[#F0442E]">●</span>
+                <span>WHOLESALE</span>
+                <span className="text-[#F0442E]">●</span>
+                <span>NATIONWIDE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats Strip Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 z-30 md:transform md:translate-y-1/2">
+          <div className="max-w-6xl mx-auto px-4 md:px-8">
+            <div className="bg-white shadow-2xl">
+              <div className="grid grid-cols-2 md:grid-cols-4">
+                <div className="p-4 md:p-10 text-center border-r border-gray-200">
+                  <div className="flex justify-center mb-2 md:mb-4">
+                    <svg className="w-8 h-8 md:w-12 md:h-12 text-[#F0442E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-2xl md:text-4xl font-bold text-[#F0442E] mb-1 md:mb-2">15+</div>
+                  <div className="text-[10px] md:text-sm text-gray-600 uppercase tracking-wider font-semibold leading-tight">YEARS<br/>EXPERIENCE</div>
+                </div>
+                <div className="p-4 md:p-10 text-center border-r border-gray-200">
+                  <div className="flex justify-center mb-2 md:mb-4">
+                    <svg className="w-8 h-8 md:w-12 md:h-12 text-[#F0442E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                  </div>
+                  <div className="text-2xl md:text-4xl font-bold text-[#F0442E] mb-1 md:mb-2">252+</div>
+                  <div className="text-[10px] md:text-sm text-gray-600 uppercase tracking-wider font-semibold">PRODUCTS</div>
+                </div>
+                <div className="p-4 md:p-10 text-center border-r border-gray-200">
+                  <div className="flex justify-center mb-2 md:mb-4">
+                    <svg className="w-8 h-8 md:w-12 md:h-12 text-[#F0442E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                    </svg>
+                  </div>
+                  <div className="text-lg md:text-3xl font-bold text-[#F0442E] mb-1 md:mb-2 leading-tight">NATION<br className="md:hidden"/>WIDE</div>
+                  <div className="text-[10px] md:text-sm text-gray-600 uppercase tracking-wider font-semibold">DISTRIBUTION</div>
+                </div>
+                <div className="p-4 md:p-10 text-center">
+                  <div className="flex justify-center mb-2 md:mb-4">
+                    <svg className="w-8 h-8 md:w-12 md:h-12 text-[#F0442E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div className="text-lg md:text-3xl font-bold text-[#F0442E] mb-1 md:mb-2">LICENSED</div>
+                  <div className="text-[10px] md:text-sm text-gray-600 uppercase tracking-wider font-semibold">OPERATION</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Range */}
+      <section className="pt-4 md:pt-48 pb-16 md:pb-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+            <div>
+              <div className="text-xs md:text-sm text-[#F0442E] font-bold tracking-widest uppercase mb-3">OUR PRODUCT RANGE</div>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
+                Fireworks for Every<br/>Scale of Celebration.
+              </h2>
+            </div>
+            <Link href="/products" className="text-sm font-bold text-gray-900 hover:text-[#F0442E] flex items-center gap-2 mt-4 md:mt-0">
+              VIEW ALL PRODUCTS
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+            {featuredProducts.map((product) => (
+              <div key={product.id} className="bg-white hover:shadow-xl transition group">
+                <div className="relative h-56 bg-gray-100">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-contain p-6"
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-sm text-gray-900 line-clamp-2 min-h-[40px] mb-1">{product.name}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Built for Wholesale */}
+      <section className="py-16 md:py-24 bg-black" id="factory">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="h-80 md:h-96 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-white/10 text-sm font-bold">
+              [WAREHOUSE PHOTO]
+            </div>
+            <div className="text-white">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">BUILT FOR WHOLESALE.</h2>
+              <p className="text-white/80 text-base md:text-lg mb-10 leading-relaxed">
+                From established dealers to seasonal resellers,<br/>
+                our supply operation is built to handle volume.
+              </p>
+              <div className="grid grid-cols-3 gap-6 mb-10">
+                <div className="text-center">
+                  <div className="flex justify-center mb-3">
+                    <svg className="w-10 h-10 text-[#F0442E]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/>
+                    </svg>
+                  </div>
+                  <div className="text-xs font-bold">Factory<br/>Direct Supply</div>
+                </div>
+                <div className="text-center">
+                  <div className="flex justify-center mb-3">
+                    <svg className="w-10 h-10 text-[#F0442E]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                    </svg>
+                  </div>
+                  <div className="text-xs font-bold">Bulk Carton<br/>Orders</div>
+                </div>
+                <div className="text-center">
+                  <div className="flex justify-center mb-3">
+                    <svg className="w-10 h-10 text-[#F0442E]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                    </svg>
+                  </div>
+                  <div className="text-xs font-bold">Consistent<br/>Stock</div>
+                </div>
+                <div className="text-center">
+                  <div className="flex justify-center mb-3">
+                    <svg className="w-10 h-10 text-[#F0442E]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <div className="text-xs font-bold">Dealer<br/>Support</div>
+                </div>
+                <div className="text-center">
+                  <div className="flex justify-center mb-3">
+                    <svg className="w-10 h-10 text-[#F0442E]" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                  </div>
+                  <div className="text-xs font-bold">Nationwide<br/>Logistics</div>
+                </div>
+              </div>
+              <a href="https://wa.me/60167338738" className="inline-block bg-[#F0442E] hover:bg-[#D63826] text-white px-8 py-4 font-bold transition">
+                BECOME A DEALER
+                <span className="ml-2">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Operations - Behind Every Celebration */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-16 max-w-xl">
+            Behind Every Celebration<br/>Is a Serious Operation.
+          </h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { num: '01', title: 'WAREHOUSE', desc: 'Large organised inventory.' },
+              { num: '02', title: 'QUALITY CONTROL', desc: 'Professional product inspection.' },
+              { num: '03', title: 'PACKING', desc: 'Carefully packed for safety.' },
+              { num: '04', title: 'DISTRIBUTION', desc: 'On-time delivery across Malaysia.' }
+            ].map((item) => (
+              <div key={item.num}>
+                <div className="text-sm text-[#F0442E] font-bold mb-4">{item.num}</div>
+                <div className="bg-gray-200 h-48 mb-4 flex items-center justify-center text-gray-400 text-xs font-bold">
+                  [PHOTO]
+                </div>
+                <h3 className="text-sm font-bold mb-2 uppercase">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Supply Partner */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-16 max-w-xl">
+            A Supply Partner<br/>Built for Scale.
+          </h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { icon: '✓', title: 'LICENSED & COMPLIANT', desc: 'Established professional operation.' },
+              { icon: '📊', title: 'RELIABLE INVENTORY', desc: 'Stock planning for major festive seasons.' },
+              { icon: '📦', title: 'WHOLESALE CAPACITY', desc: 'Built for carton and volume orders.' },
+              { icon: '🚚', title: 'NATIONWIDE DISTRIBUTION', desc: 'Reliable supply throughout Malaysia.' }
+            ].map((item, i) => (
+              <div key={i} className="flex gap-4">
+                <div className="text-3xl text-[#F0442E] flex-shrink-0">{item.icon}</div>
+                <div>
+                  <h3 className="text-xs font-bold mb-2 uppercase tracking-wider">{item.title}</h3>
+                  <p className="text-sm text-gray-600">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Distribution Map */}
+      <section className="py-16 md:py-24 bg-black" id="distribution">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="h-96 bg-gray-900 relative overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-white/10 text-sm font-bold">[MALAYSIA MAP]</div>
+                {/* Placeholder dots */}
+                <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-[#F0442E] rounded-full shadow-lg shadow-[#F0442E]/50" />
+                <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-[#F0442E] rounded-full shadow-lg shadow-[#F0442E]/50" />
+                <div className="absolute top-2/3 left-1/2 w-3 h-3 bg-[#F0442E] rounded-full shadow-lg shadow-[#F0442E]/50" />
+              </div>
+            </div>
+            <div className="text-white">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                From Our Warehouse<br/>to Businesses Across Malaysia.
+              </h2>
+              <p className="text-white/80 text-base md:text-lg mb-10 leading-relaxed">
+                Our distribution network covers major cities,<br/>
+                towns and rural areas to support dealers<br/>
+                and resellers nationwide.
+              </p>
+              <a href="https://wa.me/60167338738" className="inline-block bg-[#F0442E] hover:bg-[#D63826] text-white px-8 py-4 font-bold transition">
+                DISCUSS WHOLESALE SUPPLY →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Growing Portfolio - Brands */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">A Growing Fireworks Portfolio.</h2>
+          <div className="grid grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto">
+            <div className="text-center border-2 border-gray-300 p-8 md:p-12 hover:border-[#F0442E] transition">
+              <div className="text-lg md:text-2xl font-bold text-gray-900">MCI<br/>HAPPINESS</div>
+            </div>
+            <div className="text-center border-2 border-gray-300 p-8 md:p-12 hover:border-[#F0442E] transition">
+              <div className="text-lg md:text-2xl font-bold text-[#F0442E]">DON<br/>JUARA</div>
+            </div>
+            <div className="text-center border-2 border-gray-300 p-8 md:p-12 hover:border-[#F0442E] transition">
+              <div className="text-lg md:text-2xl font-bold text-gray-900">ADN<br/><span className="text-[#F0442E]">REDCRACKER</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-gray-200 h-96 flex items-center justify-center text-gray-400 font-bold">
+              [CERTIFICATES PHOTO]
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Professional.<br/>
+                Responsible.<br/>
+                Compliant.
+              </h2>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                We operate under strict licensing, safety standards and import regulations.
+                Every product is backed with proper documentation and responsible supply chain practices.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  'Licensed Importer & Distributor',
+                  'KDN / PDRM Licensed',
+                  'Compliance with Safety Standards',
+                  'Proper Storage & Handling',
+                  'Product Traceability & Documentation',
+                  'Responsible Supply Chain'
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-3 items-start">
+                    <svg className="w-5 h-5 text-[#F0442E] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                    </svg>
+                    <div className="text-sm font-medium">{item}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="relative py-20 md:py-32 bg-black">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-8 text-center text-white">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            READY TO STOCK<br/>YOUR NEXT SEASON?
+          </h2>
+          <p className="text-lg md:text-xl mb-10 text-white/90">
+            Wholesale supply for dealers and resellers throughout Malaysia.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://wa.me/60167338738" className="bg-[#F0442E] hover:bg-[#D63826] text-white px-10 py-4 font-bold transition">
+              BECOME A DEALER
+            </a>
+            <a href="https://wa.me/60167338738" className="border-2 border-white hover:bg-white hover:text-black text-white px-10 py-4 font-bold transition">
+              CONTACT OUR TEAM →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-12 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+            <div className="col-span-2">
+              <div className="text-2xl font-bold mb-3">
+                MCI <span className="text-[#F0442E]">HAPPINESS</span>
+              </div>
+              <p className="text-white/60 text-sm leading-relaxed mb-4">
+                MCI Happiness, Don Juara & ADN RedCracker.<br/>
+                Pemborong mercun terbesar Malaysia.
+              </p>
+              <div className="text-white/40 text-xs space-y-1 mt-4">
+                <p>Adin Redcracker Sdn Bhd</p>
+                <p>Registration No: 1226015-P</p>
+                <p>Email: admin@adinredcracker.com</p>
+              </div>
+            </div>
+            <div>
+              <div className="text-xs text-white/40 uppercase tracking-wider mb-4 font-bold">COMPANY</div>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="text-white/70 hover:text-[#F0442E]">About us</a></li>
+                <li><a href="#" className="text-white/70 hover:text-[#F0442E]">Our Factory</a></li>
+                <li><a href="#" className="text-white/70 hover:text-[#F0442E]">Compliance</a></li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-xs text-white/40 uppercase tracking-wider mb-4 font-bold">PRODUCTS</div>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/products" className="text-white/70 hover:text-[#F0442E]">All Products</Link></li>
+                <li><a href="#" className="text-white/70 hover:text-[#F0442E]">ADN RedCracker</a></li>
+                <li><a href="#" className="text-white/70 hover:text-[#F0442E]">Don Juara</a></li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-xs text-white/40 uppercase tracking-wider mb-4 font-bold">CONTACT</div>
+              <ul className="space-y-2 text-sm">
+                <li className="text-white/70">016-733 8738</li>
+                <li><a href="https://wa.me/60167338738" className="text-white/70 hover:text-[#F0442E]">WhatsApp</a></li>
+                <li><a href="mailto:admin@adinredcracker.com" className="text-white/70 hover:text-[#F0442E]">Email</a></li>
+                <li><a href="https://t.me/adinredcracker" className="text-white/70 hover:text-[#F0442E]" target="_blank">Telegram</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
+            <div>© 2026 MCI Happiness. All rights reserved.</div>
+            <div className="text-xs font-mono">BERLESEN PDRM</div>
+          </div>
+        </div>
+      </footer>
+
+      {/* WhatsApp Float */}
+      <a
+        href="https://wa.me/60167338738"
+        className="fixed bottom-8 right-8 bg-[#25D366] hover:bg-[#20BD5A] text-white p-4 rounded-full shadow-2xl z-50"
+        target="_blank"
+        aria-label="WhatsApp"
+      >
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+    </main>
+  )
+}
